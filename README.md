@@ -15,23 +15,36 @@ Package all the sample executable filesand its dependcies. In this sampleproject
 
 #copy all the files to a temporary directory, for example “outfiles”
 .cd /usr/local/Ascend/ascend-toolkit/{version}/arm64-linux_gcc7.3.0/acllib/sample/acl_execute_model/acl_vpc_jpege_resnet50/mkdir outfiles
+
 cp -r ./data ./outfiles
+
 cp -r ./model./outfiles
+
 cp -r ./out./outfilesmkdir ./outfiles/src
+
 cp ./src/alc.json ./outfiles/src
+
 #compress all the file
+
 star -zcvf outfiles.tar ./outfiles
 
 Here, first we make a folder outfiles and package all data, models and alc.json file and conpress all file. 
 
 Upload the packagefile “outfiles.tar” to any directoryand decompress all the files. For how to login and upload. 
 #go to the directory where the “outfiles.tar” file located
+
 cd {your dir}
+
 #decompress the filetar -xzf outfiles.tar
+
 #go to the directory where the “main” file located
+
 cd outfiles/out
+
 #add the executable to “main”chmod +x main
+
 #run
+
 ./main 0 --execution result--Decode two *.jpg images into two YUV420SP NV12 images, resize them, and perform model inference to obtain the inference results of the two images.
 
 ./main 1 --execution result-- same as parameter 0 but has crop them instead of resize them. 
