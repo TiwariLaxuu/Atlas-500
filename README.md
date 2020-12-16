@@ -54,4 +54,20 @@ cd outfiles/out
 ./main 3 --Encode a YUV420SP image into a *.jpg image
 
 
+##Configuring a System Network Proxy
+Log in to the user environment as therootuser
+Open the/etc/profilefile:
+Add the following content to the file, save the file, and exit
+export http_proxy="http://user:password@proxyserverip:port"export https_proxy="http://user:password@proxyserverip:port"
+Go to the .pip directory
+create a pip.conffile in the.pipdirectory:
+Edit the pip.conffile.
+ 
+
+[install]#Configure the trusted host as required.trusted-host=mirrors.tools.huawei.com[global]#Configure the sources as required.index-url=http://mirrors.tools.huawei.com/pypi/simple/
+
+Run the:wq!command to save the file and exit
+ 
+
+
 
